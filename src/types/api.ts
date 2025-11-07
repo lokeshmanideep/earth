@@ -29,7 +29,7 @@ export type PlaceholderTypeType =
   (typeof PlaceholderType)[keyof typeof PlaceholderType];
 
 // Base API Response Types
-export interface ApiResponse<T = any> {
+export interface ApiResponse<T> {
   success: boolean;
   data?: T;
   error?: string;

@@ -24,7 +24,7 @@ interface ApiConversationalInterfaceProps
 {
     documentId: DocumentId;
     placeholders: PlaceholderResponse[];
-    onPlaceholderUpdate: ( placeholderId: number, value: string ) => void;
+    onPlaceholderUpdate: () => void;
     onComplete: () => void;
     documentStatus: DocumentStatusType;
     onProgressUpdate: ( progress: Progress ) => void;
@@ -181,7 +181,6 @@ const ApiConversationalInterface: React.FC<ApiConversationalInterfaceProps> = ( 
         setMessages( prev => [ ...prev, userMessage ] );
         setIsLoading( true );
         setError( '' );
-        let id = currentPlaceholder ? currentPlaceholder.id : 0;
         try
         {
             const chatMessage: ChatMessage = {
@@ -195,7 +194,7 @@ const ApiConversationalInterface: React.FC<ApiConversationalInterfaceProps> = ( 
             if ( response.success && response.data )
             {
 
-                onPlaceholderUpdate( id, currentInputCopy );
+                onPlaceholderUpdate();
                 onProgressUpdate( response.data.progress );
                 handleChatResponse( response.data );
             } else

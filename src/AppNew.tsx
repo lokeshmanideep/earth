@@ -60,7 +60,7 @@ function AppNew ()
             {
                 setError( 'Backend API is not available. Using local processing only.' );
             }
-        } catch ( error )
+        } catch
         {
             setIsApiAvailable( false );
             setError( 'Failed to connect to backend API. Using local processing only.' );
@@ -149,7 +149,7 @@ function AppNew ()
         }
     };
 
-    const handlePlaceholderUpdate = async ( placeholderId: number, value: string ) =>
+    const handlePlaceholderUpdate = async () =>
     {
         loadPlaceholders( document!.id );
     };
@@ -438,7 +438,7 @@ function AppNew ()
                                     label: p.placeholder_text,
                                     originalText: p.placeholder_text,
                                     value: p.filled_value || '',
-                                    type: ( p.placeholder_type as any ) || 'text',
+                                    type: 'text',
                                     required: true
                                 } ) )}
                                 onDownload={handleDownload}
@@ -505,7 +505,7 @@ function AppNew ()
                                     label: p.placeholder_text,
                                     originalText: p.placeholder_text,
                                     value: p.filled_value || '',
-                                    type: ( p.placeholder_type as any ) || 'text',
+                                    type: 'text',
                                     required: true
                                 } ) )}
                                 onDownload={handleDownload}
