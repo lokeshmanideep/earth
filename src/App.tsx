@@ -17,7 +17,7 @@ import { DocumentStatus } from './types/api';
 
 type AppState = 'upload' | 'processing' | 'conversation' | 'preview' | 'completed';
 
-function AppNew ()
+function App ()
 {
     const [ currentState, setCurrentState ] = useState<AppState>( 'upload' );
     const [ document, setDocument ] = useState<DocumentResponse | null>( null );
@@ -267,7 +267,7 @@ function AppNew ()
                             <FileText className="h-8 w-8 text-blue-600" />
                             <div>
                                 <h1 className="text-xl font-bold text-gray-900">Legal Document Assistant</h1>
-                                <p className="text-sm text-gray-500">AI-powered document completion via API</p>
+                                <p className="text-sm text-gray-500">AI-powered document completion</p>
                             </div>
                         </div>
 
@@ -522,7 +522,7 @@ function AppNew ()
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
                     <div className="flex items-center justify-between">
                         <p className="text-sm text-gray-500">
-                            Legal Document Assistant - Powered by AI API
+                            Legal Document Assistant - Powered by AI
                         </p>
                         <div className="flex items-center space-x-4">
                             <span className="text-xs text-gray-400">
@@ -539,4 +539,4 @@ function AppNew ()
     );
 }
 
-export default AppNew;
+export default App;
